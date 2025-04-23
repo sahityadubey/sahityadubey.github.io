@@ -1,19 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Add this favicon section -->
     <title>Sahitya Dubey | Senior Mobile Software Engineer</title>
-    
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="manifest" href="/site.webmanifest">
-    
+
     <meta name="description" content="Senior Mobile Software Engineer with 7.5+ years of experience in Android development">
-    <!-- Add these new SEO meta tags -->
     <meta name="author" content="Sahitya Dubey">
     <meta property="og:title" content="Sahitya Dubey | Senior Mobile Software Engineer">
     <meta property="og:description" content="Senior Mobile Software Engineer with 7.5+ years of experience in Android development">
@@ -24,36 +21,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .fade-in {
-            animation: fadeIn 1s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .section {
-            opacity: 0;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            transform: translateY(20px);
-        }
-        
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { position: relative; }
         .nav-link::after {
             content: '';
             position: absolute;
@@ -61,514 +30,262 @@
             height: 2px;
             bottom: -2px;
             left: 0;
-            background-color: #052786;
+            background-color: #2dd4bf; /* teal accent */
             transition: width 0.3s ease;
         }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .active::after {
-            width: 100%;
-        }
-        
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        
-        .accordion-content.open {
-            max-height: 1000px;
-            transition: max-height 0.5s ease-in;
-        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
     </style>
 </head>
-<body class="bg-white text-gray-800">
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="#home" class="text-xl font-bold text-navy-800">Sahitya Dubey</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-navy-800">Home</a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-navy-800">About</a>
-                    <a href="#skills" class="nav-link text-gray-700 hover:text-navy-800">Skills</a>
-                    <a href="#experience" class="nav-link text-gray-700 hover:text-navy-800">Experience</a>
-                    <a href="#projects" class="nav-link text-gray-700 hover:text-navy-800">Projects</a>
-                    <a href="#education" class="nav-link text-gray-700 hover:text-navy-800">Education</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-navy-800">Contact</a>
-                </div>
-                <div class="flex items-center md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-navy-800">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+<body class="bg-slate-900 text-slate-400">
+
+<!-- Navbar -->
+<nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <a href="#home" class="text-2xl font-bold text-teal-400">Sahitya Dubey</a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="nav-link text-slate-400 hover:text-teal-400">Home</a>
+        <a href="#about" class="nav-link text-slate-400 hover:text-teal-400">About</a>
+        <a href="#skills" class="nav-link text-slate-400 hover:text-teal-400">Skills</a>
+        <a href="#experience" class="nav-link text-slate-400 hover:text-teal-400">Experience</a>
+        <a href="#projects" class="nav-link text-slate-400 hover:text-teal-400">Projects</a>
+        <a href="#education" class="nav-link text-slate-400 hover:text-teal-400">Education</a>
+        <a href="#contact" class="nav-link text-slate-400 hover:text-teal-400">Contact</a>
+      </div>
+      <button id="mobile-menu-button" class="md:hidden text-slate-400 hover:text-teal-400">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-slate-900/90 border-t border-slate-800">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-slate-400 hover:text-teal-400 hover:bg-slate-800">Home</a>
+      <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-400 hover:text-teal-400 hover:bg-slate-800">About</a>
+      <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-slate-400 hover:text-teal-400 hover:bg-slate-800">Skills</a>
+      <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-slate-400 hover:text-teal-400 hover:bg-slate-800">Experience</a>
+      <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-slate-400 hover:text-teal-400 hover:bg-slate-800">Projects</a>
+      <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-slate-400 hover:text-teal-400 hover:bg-slate-800">Education</a>
+      <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-400 hover:text-teal-400 hover:bg-slate-800">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="home" class="min-h-screen flex items-center justify-center py-20 px-4">
+  <div class="text-center">
+    <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-teal-400 mb-8">
+      <img src="https://avatars.githubusercontent.com/u/58283824?s=400&u=431a4822d0f22cfea9bdca5741e058c68985bd8d&v=4" alt="Sahitya Dubey" class="w-full h-full object-cover" />
+    </div>
+    <h1 class="text-5xl font-bold text-slate-100">Hi, I'm <span class="text-teal-400">Sahitya Dubey</span></h1>
+    <h2 class="text-2xl text-slate-400 mt-4">Senior Android Developer with 7.5+ years experience</h2>
+    <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+      <a href="https://bit.ly/sahitya-resume" target="_blank" class="px-6 py-3 border border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-slate-900 rounded-lg font-medium transition">Download Resume</a>
+      <a href="#contact" class="px-6 py-3 border border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-slate-900 rounded-lg font-medium transition">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-bold text-center text-slate-100 mb-12">About Me</h2>
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <div class="md:w-1/3">
+        <div class="bg-slate-700 p-6 rounded-lg">
+          <div class="mb-4"><h3 class="text-lg font-semibold text-teal-400">Location</h3><p class="text-slate-300">Bengaluru, India</p></div>
+          <div class="mb-4"><h3 class="text-lg font-semibold text-teal-400">Experience</h3><p class="text-slate-300">7.5+ years</p></div>
+          <div><h3 class="text-lg font-semibold text-teal-400">Specialization</h3><p class="text-slate-300">Mobile Development</p></div>
+        </div>
+      </div>
+      <div class="md:w-2/3 text-slate-300 space-y-4">
+        <p>I'm a passionate Senior Mobile Software Engineer with extensive experience in building robust and scalable mobile applications for Android platforms. My expertise lies in Kotlin, Java, and Xamarin development, with a strong focus on clean architecture patterns like MVVM.</p>
+        <p>Over the years, I've specialized in working with Android Jetpack components, Bluetooth Low Energy (BLE) communication, MQTT protocols, and cloud integration with Azure services. I take pride in writing clean, maintainable code and following best practices in mobile development.</p>
+        <p>When I'm not coding, you can find me contributing to open-source projects, mentoring junior developers, or exploring new technologies in the mobile ecosystem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center text-slate-100 mb-12">Skills</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-300">
+      <div class="bg-slate-800 p-6 rounded-lg">
+        <h3 class="text-xl font-semibold text-teal-400 mb-4">Languages</h3>
+        <ul class="space-y-2"><li>Kotlin</li><li>Java</li><li>RxJava</li></ul>
+      </div>
+      <div class="bg-slate-800 p-6 rounded-lg">
+        <h3 class="text-xl font-semibold text-teal-400 mb-4">Mobile</h3>
+        <ul class="space-y-2"><li>Android</li><li>Xamarin</li><li>Jetpack Components</li></ul>
+      </div>
+      <div class="bg-slate-800 p-6 rounded-lg">
+        <h3 class="text-xl font-semibold text-teal-400 mb-4">Architecture</h3>
+        <ul class="space-y-2"><li>MVVM</li><li>Dagger/Hilt</li><li>Retrofit</li></ul>
+      </div>
+      <div class="bg-slate-800 p-6 rounded-lg">
+        <h3 class="text-xl font-semibold text-teal-400 mb-4">Protocols</h3>
+        <ul class="space-y-2"><li>BLE</li><li>MQTT</li></ul>
+      </div>
+      <div class="bg-slate-800 p-6 rounded-lg">
+        <h3 class="text-xl font-semibold text-teal-400 mb-4">Databases</h3>
+        <ul class="space-y-2"><li>SQLite</li><li>Room</li><li>Cosmos DB</li></ul>
+      </div>
+      <div class="bg-slate-800 p-6 rounded-lg">
+        <h3 class="text-xl font-semibold text-teal-400 mb-4">Tools</h3>
+        <ul class="space-y-2"><li>Android Studio</li><li>Git</li><li>Azure DevOps</li><li>Postman</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800">
+  <div class="max-w-4xl mx-auto text-slate-300">
+    <h2 class="text-4xl font-bold text-center text-slate-100 mb-12">Experience</h2>
+    <div class="space-y-8">
+      <div class="bg-slate-700 p-6 rounded-lg">
+        <div class="flex justify-between items-center mb-4"><h3 class="text-xl font-semibold text-teal-400">Allegion plc</h3><span>Nov 2020 - Present</span></div>
+        <p>As a Senior Mobile Software Engineer, I've led development of multiple security-focused mobile applications with over 5 product releases to date.</p>
+        <ul class="list-disc pl-5 mt-2 space-y-1"><li>Improved app performance by 32% through optimization of network calls and database operations</li><li>Increased unit test coverage by 24% by implementing comprehensive testing strategies</li><li>Implemented additional security layers including biometric authentication and encrypted local storage</li><li>Led a team of 4 developers, conducting code reviews and mentoring junior engineers</li><li>Integrated BLE communication with IoT security devices and implemented MQTT for real-time updates</li></ul>
+      </div>
+      <div class="bg-slate-700 p-6 rounded-lg">
+        <div class="flex justify-between items-center mb-4"><h3 class="text-xl font-semibold text-teal-400">Cargill Business Services</h3><span>Jun 2017 - Nov 2020</span></div>
+        <p>Developed and maintained enterprise mobile applications for the agricultural sector, focusing on dairy farm management solutions.</p>
+        <ul class="list-disc pl-5 mt-2 space-y-1"><li>Migrated legacy codebase to MVVM architecture, improving maintainability and testability</li><li>Successfully deployed applications to 21 countries with localization support</li><li>Fixed 15+ critical bugs impacting production environments</li><li>Led a 3-person development team, coordinating with product managers and designers</li><li>Integrated Azure Cosmos DB for offline-first data synchronization capabilities</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800">
+  <div class="max-w-4xl mx-auto text-slate-300">
+    <h2 class="text-4xl font-bold text-center text-slate-100 mb-12">Projects</h2>
+    <div class="space-y-4">
+      <!-- Schlage Home -->
+      <div class="bg-slate-700 p-6 rounded-lg">
+        <button class="accordion-header w-full flex justify-between items-center text-left text-slate-100">
+          <h3 class="text-xl font-semibold text-teal-400">Schlage Home</h3>
+          <svg class="w-5 h-5 text-teal-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-content mt-4 hidden text-slate-300">
+          <p>A smart home security application that allows users to control and monitor Schlage smart locks and security devices remotely.</p>
+          <h4 class="mt-4 font-medium text-teal-400">Tech Stack:</h4>
+          <div class="flex flex-wrap gap-2 mt-1">
+            <span class="px-3 py-1 bg-slate-600 rounded-full text-sm">Kotlin</span>
+            <span class="px-3 py-1 bg-slate-600 rounded-full text-sm">MVVM</span>
+            <span class="px-3 py-1 bg-slate-600 rounded-full text-sm">BLE</span>
+            <span class="px-3 py-1 bg-slate-600 rounded-full text-sm">MQTT</span>
+            <span class="px-3 py-1 bg-slate-600 rounded-full text-sm">Room</span>
+            <span class="px-3 py-1 bg-slate-600 rounded-full text-sm">Dagger/Hilt</span>
+          </div>
+          <h4 class="mt-4 font-medium text-teal-400">Key Metrics:</h4>
+          <ul class="list-disc pl-5 mt-1">
+            <li>500,000+ downloads on Google Play Store</li>
+            <li>4.6/5 average rating with 15,000+ reviews</li>
+            <li>32% improvement in app launch time</li>
+            <li>99.8% crash-free user sessions</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Dairy Enteligen -->
+      <div class="bg-slate-700 p-6 rounded-lg">
+        <button class="accordion-header w-full flex justify-between items-center text-left text-slate-100">
+          <h3 class="text-xl font-semibold text-teal-400">Dairy Enteligen</h3>
+          <svg class="w-5 h-5 text-teal-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-content mt-4 hidden text-slate-300">
+          <p>An enterprise application for dairy farmers to manage herd health, milk production, and farm operations.</p>
+          <h4 class="mt-4 font-medium text-teal-400">Tech Stack:</h4>
+          <div class="flex flex-wrap gap-2 mt-1">
+            <span class="px-3 py-1 bg-slate-600 rounded-full text-sm">Java</span>
+            <span class="px-3 py-1 bg-slate-600 rounded-full text-sm">MVVM</span>
+            <span class="px-3 py-1 bg-slate-600 rounded-full text-sm">Retrofit</span>
+            <span class="px-3 py-1 bg-slate-600 rounded-full text-sm">RxJava</span>
+            <span class="px-3 py-1 bg-slate-600 rounded-full text-sm">Cosmos DB</span>
+            <span class="px-3 py-1 bg-slate-600 rounded-full text-sm">Xamarin</span>
+          </div>
+          <h4 class="mt-4 font-medium text-teal-400">Key Metrics:</h4>
+          <ul class="list-disc pl-5 mt-1">
+            <li>Used by 5,000+ dairy farms across 21 countries</li>
+            <li>Reduced data entry time by 45% through optimized UI flows</li>
+            <li>Enabled offline functionality for remote farm locations</li>
+            <li>Integrated with 15+ third-party dairy management systems</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 text-slate-300">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-bold text-center text-slate-100 mb-12">Education</h2>
+    <div class="space-y-8">
+      <div class="bg-slate-700 p-6 rounded-lg">
+        <div class="flex justify-between items-center mb-4"><h3 class="text-xl font-semibold text-teal-400">Bachelor of Technology in Computer Science</h3><span>2013 - 2017</span></div>
+        <p>ITM University, Gwalior</p>
+        <p>GPA: 6.9/10</p>
+      </div>
+      <div class="bg-slate-700 p-6 rounded-lg">
+        <div class="flex justify-between items-center mb-4"><h3 class="text-xl font-semibold text-teal-400">10th - 12th, Higher Secondary Education</h3><span>2011 - 2013</span></div>
+        <p>Miss Hill School, Gwalior</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800 text-slate-300">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-slate-100 mb-12">Get In Touch</h2>
+      <div class="bg-slate-700 p-6 rounded-lg inline-block text-left w-full max-w-lg">
+        <h3 class="text-xl font-semibold text-teal-400 mb-6 text-center">Contact Information</h3>
+        
+        <div class="text-center">
+          <p><span class="font-medium">Location:</span> Bengaluru, India</p>
+          <p class="mt-2">
+            <span class="font-medium">Email:</span> 
+            <a href="mailto:sahityadubey@outlook.com" class="text-teal-400 hover:underline">sahitya.dubey@outlook.com</a>
+          </p>
         </div>
         
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-navy-800 hover:bg-gray-100">Home</a>
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-navy-800 hover:bg-gray-100">About</a>
-                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-navy-800 hover:bg-gray-100">Skills</a>
-                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-navy-800 hover:bg-gray-100">Experience</a>
-                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-navy-800 hover:bg-gray-100">Projects</a>
-                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-navy-800 hover:bg-gray-100">Education</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-navy-800 hover:bg-gray-100">Contact</a>
-            </div>
+        <div class="mt-6 text-center">
+          <h4 class="font-semibold text-teal-400 mb-4">Connect with me</h4>
+          <div class="flex justify-center space-x-4">
+            <a href="https://www.linkedin.com/in/sahityadubey/" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-600 hover:bg-teal-400 text-teal-400 hover:text-slate-900 transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/sahityadubey" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-600 hover:bg-teal-400 text-teal-400 hover:text-slate-900 transition">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
         </div>
-    </nav>
+        
+      </div>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-blue-50 py-20 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto text-center fade-in">
-            <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-navy-700 mb-8">
-                <img src="https://avatars.githubusercontent.com/u/58283824?s=400&u=431a4822d0f22cfea9bdca5741e058c68985bd8d&v=4" 
-                    alt="Sahitya Dubey - Senior Mobile Software Engineer" 
-                    class="w-full h-full object-cover">
-            </div>
-            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Hi, I'm <span class="text-navy-700">Sahitya Dubey</span></h1>
-            <h2 class="text-xl sm:text-2xl text-gray-600 mb-8">Senior Android Developer with 7.5+ years' experience</h2>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mx-auto w-fit">
-              <!-- In your Hero Section button -->
-                <a href="https://bit.ly/sahitya-resume"
-                    class="px-6 py-3 border border-navy-700 text-navy-700 hover:bg-navy-50 rounded-lg font-medium transition-colors duration-300"
-                    target="_blank" rel="noopener noreferrer">
-                    Download Resume
-                </a>
-                <a href="#contact" class="px-6 py-3 border border-navy-700 text-navy-700 hover:bg-navy-50 rounded-lg font-medium transition-colors duration-300">
-                    Contact Me
-                </a>
-            </div>
-        </div>
-    </section>
+<!-- Footer -->
+<footer class="py-8 bg-slate-900 text-slate-500 text-center">
+  &copy; 2025 Sahitya Dubey. All rights reserved.
+</footer>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white section">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">About Me</h2>
-            <div class="flex flex-col md:flex-row gap-8 items-center">
-                <div class="md:w-1/3">
-                    <div class="bg-blue-100 p-6 rounded-lg">
-                        <div class="mb-4">
-                            <h3 class="text-lg font-semibold text-navy-700">Location</h3>
-                            <p class="text-gray-700">Bengaluru, India</p>
-                        </div>
-                        <div class="mb-4">
-                            <h3 class="text-lg font-semibold text-navy-700">Experience</h3>
-                            <p class="text-gray-700">7.5+ years</p>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-navy-700">Specialization</h3>
-                            <p class="text-gray-700">Mobile Development</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:w-2/3">
-                    <p class="text-gray-700 mb-4">
-                        I'm a passionate Senior Mobile Software Engineer with extensive experience in building robust and scalable mobile applications for Android platforms. My expertise lies in Kotlin, Java, and Xamarin development, with a strong focus on clean architecture patterns like MVVM.
-                    </p>
-                    <p class="text-gray-700 mb-4">
-                        Over the years, I've specialized in working with Android Jetpack components, Bluetooth Low Energy (BLE) communication, MQTT protocols, and cloud integration with Azure services. I take pride in writing clean, maintainable code and following best practices in mobile development.
-                    </p>
-                    <p class="text-gray-700">
-                        When I'm not coding, you can find me contributing to open-source projects, mentoring junior developers, or exploring new technologies in the mobile ecosystem.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 section">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Languages -->
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-navy-700 mb-4">Languages</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">Kotlin</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">Java</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">RxJava</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Mobile -->
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-navy-700 mb-4">Mobile</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">Android</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">Xamarin</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">Jetpack Components</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Architecture -->
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-navy-700 mb-4">Architecture</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">MVVM</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">Dagger/Hilt</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">Retrofit</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Protocols -->
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-navy-700 mb-4">Protocols</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">BLE</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">MQTT</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Databases -->
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-navy-700 mb-4">Databases</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">SQLite</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">Room</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">Cosmos DB</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Tools -->
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-navy-700 mb-4">Tools</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">Android Studio</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">Git</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">Azure DevOps</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-2 h-2 bg-navy-700 rounded-full mr-2"></span>
-                            <span class="text-gray-700">Postman</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 bg-white section">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Experience</h2>
-            <div class="space-y-8">
-                <!-- Allegion -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-navy-700">Allegion plc</h3>
-                        <span class="text-gray-600">Nov 2020 - Present</span>
-                    </div>
-                    <div class="space-y-4">
-                        <p class="text-gray-700">
-                            As a Senior Mobile Software Engineer, I've led the development of multiple security-focused mobile applications with over 5 product releases to date.
-                        </p>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                            <li>Improved app performance by 32% through optimization of network calls and database operations</li>
-                            <li>Increased unit test coverage by 24% by implementing comprehensive testing strategies</li>
-                            <li>Implemented additional security layers including biometric authentication and encrypted local storage</li>
-                            <li>Led a team of 4 developers, conducting code reviews and mentoring junior engineers</li>
-                            <li>Integrated BLE communication with IoT security devices and implemented MQTT for real-time updates</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Cargill -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-navy-700">Cargill Business Services</h3>
-                        <span class="text-gray-600">Jun 2017 - Nov 2020</span>
-                    </div>
-                    <div class="space-y-4">
-                        <p class="text-gray-700">
-                            Developed and maintained enterprise mobile applications for the agricultural sector, with a focus on dairy farm management solutions.
-                        </p>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                            <li>Migrated legacy codebase to MVVM architecture, improving maintainability and testability</li>
-                            <li>Successfully deployed applications to 21 countries with localization support</li>
-                            <li>Fixed 15+ critical bugs that were impacting production environments</li>
-                            <li>Led a 3-person development team, coordinating with product managers and designers</li>
-                            <li>Integrated Azure Cosmos DB for offline-first data synchronization capabilities</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 section">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Projects</h2>
-            <div class="space-y-4">
-                <!-- Schlage Home -->
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <button class="accordion-header w-full flex justify-between items-center text-left">
-                        <h3 class="text-xl font-semibold text-navy-700">Schlage Home</h3>
-                        <svg class="w-5 h-5 text-navy-700 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="accordion-content mt-4">
-                        <p class="text-gray-700 mb-4">
-                            A smart home security application that allows users to control and monitor Schlage smart locks and security devices remotely.
-                        </p>
-                        <div class="mb-4">
-                            <h4 class="font-medium text-navy-700 mb-2">Tech Stack:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-blue-100 text-navy-700 rounded-full text-sm">Kotlin</span>
-                                <span class="px-3 py-1 bg-blue-100 text-navy-700 rounded-full text-sm">MVVM</span>
-                                <span class="px-3 py-1 bg-blue-100 text-navy-700 rounded-full text-sm">BLE</span>
-                                <span class="px-3 py-1 bg-blue-100 text-navy-700 rounded-full text-sm">MQTT</span>
-                                <span class="px-3 py-1 bg-blue-100 text-navy-700 rounded-full text-sm">Room</span>
-                                <span class="px-3 py-1 bg-blue-100 text-navy-700 rounded-full text-sm">Dagger/Hilt</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="font-medium text-navy-700 mb-2">Key Metrics:</h4>
-                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
-                                <li>500,000+ downloads on Google Play Store</li>
-                                <li>4.6/5 average rating with 15,000+ reviews</li>
-                                <li>32% improvement in app launch time</li>
-                                <li>99.8% crash-free user sessions</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Dairy Enteligen -->
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <button class="accordion-header w-full flex justify-between items-center text-left">
-                        <h3 class="text-xl font-semibold text-navy-700">Dairy Enteligen</h3>
-                        <svg class="w-5 h-5 text-navy-700 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="accordion-content mt-4">
-                        <p class="text-gray-700 mb-4">
-                            An enterprise application for dairy farmers to manage herd health, milk production, and farm operations.
-                        </p>
-                        <div class="mb-4">
-                            <h4 class="font-medium text-navy-700 mb-2">Tech Stack:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-blue-100 text-navy-700 rounded-full text-sm">Java</span>
-                                <span class="px-3 py-1 bg-blue-100 text-navy-700 rounded-full text-sm">MVVM</span>
-                                <span class="px-3 py-1 bg-blue-100 text-navy-700 rounded-full text-sm">Retrofit</span>
-                                <span class="px-3 py-1 bg-blue-100 text-navy-700 rounded-full text-sm">RxJava</span>
-                                <span class="px-3 py-1 bg-blue-100 text-navy-700 rounded-full text-sm">Cosmos DB</span>
-                                <span class="px-3 py-1 bg-blue-100 text-navy-700 rounded-full text-sm">Xamarin</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="font-medium text-navy-700 mb-2">Key Metrics:</h4>
-                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
-                                <li>Used by 5,000+ dairy farms across 21 countries</li>
-                                <li>Reduced data entry time by 45% through optimized UI flows</li>
-                                <li>Enabled offline functionality for remote farm locations</li>
-                                <li>Integrated with 15+ third-party dairy management systems</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="py-20 px-4 sm:px-6 lg:px-8 bg-white section">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Education</h2>
-            <div class="space-y-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-navy-700">Bachelor of Technology in Computer Science</h3>
-                        <span class="text-gray-600">2013 - 2017</span>
-                    </div>
-                    <div class="space-y-2">
-                        <p class="text-gray-700">ITM University, Gwalior</p>
-                        <p class="text-gray-700">GPA: 6.9/10</p>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-navy-700">10th  - 12th, Higher Secondary Education</h3>
-                        <span class="text-gray-600">2011 - 2013</span>
-                    </div>
-                    <div class="space-y-2">
-                        <p class="text-gray-700">Miss Hill School, Gwalior</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 section">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Get In Touch</h2>
-            <div class="flex justify-center">
-                <div class="bg-white p-6 rounded-lg shadow-sm w-full max-w-lg">
-                    <div class="text-center">
-                        <h3 class="text-xl font-semibold text-navy-700 mb-6">Contact Information</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <p class="text-sm font-medium text-gray-500">Location</p>
-                                <p class="text-base text-gray-700">Bengaluru, India</p>
-                            </div>
-                            <div>
-                                <p class="text-sm font-medium text-gray-500">Email</p>
-                                <a href="mailto:sahitya.dubey@outlook.com" class="text-base text-gray-700 hover:text-navy-700">sahitya.dubey@outlook.com</a>
-                            </div>
-                        </div>
-                        <div class="mt-8">
-                            <h4 class="text-lg font-semibold text-navy-700 mb-4">Connect with me</h4>
-                            <div class="flex justify-center space-x-4">
-                                <a href="https://www.linkedin.com/in/sahityadubey/"
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-navy-700 hover:text-white text-navy-700 transition-colors duration-300">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://github.com/sahityadubey"
-                                target="_blank" 
-                                rel="noopener noreferrer"  
-                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-navy-700 hover:text-white text-navy-700 transition-colors duration-300">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <!-- Footer -->
-    <footer class="py-8 border-t border-slate-800">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-sm text-slate-500">&copy; 2025 Sahitya Dubey. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-
-        // Accordion functionality
-        document.querySelectorAll('.accordion-header').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                const icon = button.querySelector('svg');
-                
-                button.classList.toggle('active');
-                content.classList.toggle('open');
-                icon.classList.toggle('rotate-180');
-            });
-        });
-
-        // Intersection Observer for section animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Highlight active nav link on scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+<script>
+  document.getElementById('mobile-menu-button').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+  document.querySelectorAll('.accordion-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      let content = btn.nextElementSibling;
+      content.classList.toggle('hidden');
+      btn.querySelector('svg').classList.toggle('rotate-180');
+    });
+  });
+</script>
 </body>
 </html>
