@@ -34,6 +34,10 @@
             transition: width 0.3s ease;
         }
         .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        html {
+            scroll-padding-top: 0rem;
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-400">
@@ -270,21 +274,38 @@
   </section>
 
 <!-- Footer -->
-<footer class="py-8 bg-slate-900 text-slate-500 text-center">
-  &copy; 2025 Sahitya Dubey. All rights reserved.
-</footer>
-
 <script>
-  document.getElementById('mobile-menu-button').addEventListener('click', () => {
-    document.getElementById('mobile-menu').classList.toggle('hidden');
-  });
-  document.querySelectorAll('.accordion-header').forEach(btn => {
-    btn.addEventListener('click', () => {
-      let content = btn.nextElementSibling;
-      content.classList.toggle('hidden');
-      btn.querySelector('svg').classList.toggle('rotate-180');
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuLinks = mobileMenu.querySelectorAll('a[href^="#"]');
+  
+    // Toggle mobile menu
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
-  });
-</script>
+  
+    // For each menu link: hide menu and scroll smoothly
+    menuLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();            // Prevent default jump
+        mobileMenu.classList.add('hidden'); // Close the menu
+  
+        // Find target and scroll
+        const targetId = link.getAttribute('href').substring(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          // Compute offset if you have a fixed header height
+          const headerOffset = document.querySelector('nav').offsetHeight;
+          const elementPosition = targetEl.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+</script>  
 </body>
 </html>
