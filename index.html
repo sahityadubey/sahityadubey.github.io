@@ -19,7 +19,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+  <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
         .nav-link { position: relative; }
@@ -168,8 +168,17 @@
       <!-- Schlage Home -->
       <div class="bg-slate-700 p-6 rounded-lg">
         <button class="accordion-header w-full flex justify-between items-center text-left text-slate-100">
-          <h3 class="text-xl font-semibold text-teal-400">Schlage Home</h3>
-          <svg class="w-5 h-5 text-teal-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          <div class="flex items-center space-x-2">
+            <span class="text-xl font-semibold text-slate-100">Schlage Home</span>
+            <a
+              href="https://www.schlage.com/en/home/smart-locks/schlage-app.html"
+              target="_blank"
+              class="text-teal-400 hover:text-teal-200"
+            >
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+          <svg class="w-5 h-5 text-teal-400 transition-transform" …>…</svg>
         </button>
         <div class="accordion-content mt-4 hidden text-slate-300">
           <p>A smart home security application that allows users to control and monitor Schlage smart locks and security devices remotely.</p>
@@ -194,8 +203,29 @@
       <!-- Dairy Enteligen -->
       <div class="bg-slate-700 p-6 rounded-lg">
         <button class="accordion-header w-full flex justify-between items-center text-left text-slate-100">
-          <h3 class="text-xl font-semibold text-teal-400">Dairy Enteligen</h3>
-          <svg class="w-5 h-5 text-teal-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          <div class="flex items-center space-x-2">
+            <!-- Project title -->
+            <span class="text-xl font-semibold">Dairy Enteligen</span>
+            <!-- Icon link only -->
+            <a
+              href="https://www.cargill.com/animal-nutrition/species/dairy/products/dairy-enteligen"
+              target="_blank"
+              class="text-teal-400 hover:text-teal-200"
+              aria-label="View Dairy Enteligen on GitHub"
+            >
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+          <!-- Chevron for accordion toggle -->
+          <svg
+            class="w-5 h-5 text-teal-400 transition-transform"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 9l-7 7-7-7" />
+          </svg>
         </button>
         <div class="accordion-content mt-4 hidden text-slate-300">
           <p>An enterprise application for dairy farmers to manage herd health, milk production, and farm operations.</p>
@@ -271,37 +301,37 @@
 
 <!-- Footer -->
 <script>
-    const menuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuLinks = mobileMenu.querySelectorAll('a[href^="#"]');
-  
-    // Toggle mobile menu
-    menuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+  // Toggle mobile menu
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Smooth scroll for mobile menu links
+  document.querySelectorAll('#mobile-menu a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      mobileMenu.classList.add('hidden');
+      const targetId = link.getAttribute('href').substring(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        const offset = document.querySelector('nav').offsetHeight;
+        const pos = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: pos, behavior: 'smooth' });
+      }
     });
-  
-    // For each menu link: hide menu and scroll smoothly
-    menuLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();            // Prevent default jump
-        mobileMenu.classList.add('hidden'); // Close the menu
-  
-        // Find target and scroll
-        const targetId = link.getAttribute('href').substring(1);
-        const targetEl = document.getElementById(targetId);
-        if (targetEl) {
-          // Compute offset if you have a fixed header height
-          const headerOffset = document.querySelector('nav').offsetHeight;
-          const elementPosition = targetEl.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-  
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      });
+  });
+
+  // Accordion for project sections
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector('svg');
+      content.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
     });
-</script>  
+  });
+</script>
 </body>
 </html>
