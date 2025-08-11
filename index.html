@@ -403,16 +403,6 @@
     });
   });
 
-  // Accordion for project sections
-  document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const content = header.nextElementSibling;
-      const icon = header.querySelector('svg');
-      content.classList.toggle('hidden');
-      icon.classList.toggle('rotate-180');
-    });
-  });
-
 // Accordion for project sections (only one open at a time)
 document.querySelectorAll('.accordion-header').forEach(header => {
   header.addEventListener('click', () => {
