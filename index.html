@@ -180,7 +180,7 @@
             </a>
           </div>
              <svg
-            class="w-5 h-5 text-teal-400 transition-transform"
+            class="w-5 h-5 text-teal-400 transition-transform" rotate-180"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -189,7 +189,7 @@
                   d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-        <div class="accordion-content mt-4 hidden text-slate-300">
+        <div class="accordion-content mt-4 text-slate-300">
           <p>A smart home security application that allows users to control and monitor Schlage smart locks and security devices remotely.</p>
           <h4 class="mt-4 font-medium text-teal-400">Tech Stack:</h4>
           <div class="flex flex-wrap gap-2 mt-1">
@@ -403,26 +403,26 @@
     });
   });
 
-// Accordion for project sections (only one open at a time)
-document.querySelectorAll('.accordion-header').forEach(header => {
-  header.addEventListener('click', () => {
-    const content = header.nextElementSibling;
-    const icon = header.querySelector('svg');
-
-    // Close all other accordions
-    document.querySelectorAll('.accordion-content').forEach(c => {
-      if (c !== content) {
-        c.classList.add('hidden');
-        const otherIcon = c.previousElementSibling.querySelector('svg');
-        otherIcon.classList.remove('rotate-180');
-      }
+    // Accordion for project sections (only one open at a time)
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const icon = header.querySelector('svg');
+    
+        // Close all other accordions
+        document.querySelectorAll('.accordion-content').forEach(c => {
+          if (c !== content) {
+            c.classList.add('hidden');
+            const otherIcon = c.previousElementSibling.querySelector('svg');
+            otherIcon.classList.remove('rotate-180');
+          }
+        });
+    
+        // Toggle current one
+        content.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180');
+      });
     });
-
-    // Toggle current one
-    content.classList.toggle('hidden');
-    icon.classList.toggle('rotate-180');
-  });
-});
 </script>
 </body>
 </html>
